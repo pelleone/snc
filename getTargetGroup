@@ -1,0 +1,10 @@
+// Using our script include to fetch a target group by calling a function with
+// the system property containing the value.
+
+ASSIGNMENT GROUP = getTargetGroup(SYSTEM PROPERTY);
+
+function getTargetGroup(property){
+	var groupName = gs.getProperty(property);
+	var si = new skandiaGetGroupSysId();
+	return si.getSysidFromName(groupName);
+}
